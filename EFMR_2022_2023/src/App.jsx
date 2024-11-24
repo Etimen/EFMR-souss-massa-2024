@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import InfoProduitForm from "./InfoProd";
 import Affiche from "./Affiche";
-import Recherche from "./recherche"
+import Recherche from"./Recherche"
+import ListProduit from "./ListProduit"
+import AjouterProduit from "./AddProduit"
 
 export default function App() {
   useEffect(
@@ -20,9 +23,12 @@ export default function App() {
      <>
      <Router>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/affiche">Products</Link>
-        <Link  to="/recherche">Search</Link>
+        <Link to="/">Home</Link><br />
+        <Link to="/affiche">Products</Link><br />
+        <Link  to="/recherche">Search</Link><br />
+        <Link  to="/info-produit">INfo produit</Link><br />
+        <Link  to="/listproduit">list produit</Link><br />
+        <Link  to="/AjouterProduit">Ajouter Produit produit</Link><br />
       </nav>
     
      <Routes>
@@ -30,6 +36,9 @@ export default function App() {
         <Route path="/affiche" element={<Affiche produits={produits} />} />
         <Route path="/recherche" element={<Recherche />} />
         <Route path="/info-produit" element={<InfoProduitForm />} />
+        <Route path="/listproduit" element={<ListProduit />} />
+        <Route path="/AjouterProduit" element={<AjouterProduit />} />
+       
      </Routes>
     </Router>
      

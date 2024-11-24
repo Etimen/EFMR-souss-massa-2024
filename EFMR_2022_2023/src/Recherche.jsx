@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-function Recherche (){
+export default function Recherche (){
 useEffect
     return(
         <>
